@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Компрессионные кубы — подборка и рекомендация</title>
+<style>
+  :root{
+    --bg:#0f1115;
+    --panel:#171a21;
+    --panel-light:#1f232c;
+    --line:#2a2f3a;
+    --text:#e9ecf1;
+    --muted:#9aa3b2;
+    --accent:#5ee0a0;
+    --accent2:#ffb454;
+    --bad:#ff6b6b;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.5;
+  }
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+  header.hero{
+    padding:64px 0 40px;
+    text-align:center;
+    border-bottom:1px solid var(--line);
+  }
+  header.hero h1{
+    font-size:2.4rem;
+    margin:0 0 12px;
+    letter-spacing:-0.02em;
+  }
+  header.hero p{
+    color:var(--muted);
+    font-size:1.05rem;
+    max-width:640px;
+    margin:0 auto;
+  }
+  .badge{
+    display:inline-block;
+    background:var(--panel-light);
+    border:1px solid var(--line);
+    color:var(--accent);
+    font-size:0.8rem;
+    padding:4px 12px;
+    border-radius:20px;
+    margin-bottom:18px;
+  }
+  section{padding:48px 0;border-bottom:1px solid var(--line);}
+  section h2{font-size:1.6rem;margin-bottom:6px;}
+  section .lead{color:var(--muted);margin-bottom:28px;max-width:700px;}
+
+  /* Volume calc box */
+  .calc-box{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:28px;
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:28px;
+  }
+  @media (max-width:760px){.calc-box{grid-template-columns:1fr;}}
+  .calc-box ul{margin:0;padding:0;list-style:none;}
+  .calc-box li{
+    display:flex;justify-content:space-between;
+    padding:10px 0;border-bottom:1px dashed var(--line);
+    font-size:0.95rem;
+  }
+  .calc-box li:last-child{border-bottom:none;}
+  .calc-total{
+    background:var(--panel-light);
+    border-radius:12px;
+    padding:24px;
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    text-align:center;
+  }
+  .calc-total .num{font-size:2.6rem;font-weight:700;color:var(--accent);}
+  .calc-total .label{color:var(--muted);font-size:0.9rem;margin-top:4px;}
+
+  /* Recommendation */
+  .rec-card{
+    background:linear-gradient(145deg,#16241c,var(--panel));
+    border:1px solid #2c4a3a;
+    border-radius:18px;
+    padding:32px;
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:28px;
+    align-items:center;
+  }
+  @media (max-width:700px){.rec-card{grid-template-columns:1fr;}}
+  .product-photo{
+    width:100%;
+    aspect-ratio:1/1;
+    border-radius:14px;
+    background:var(--panel-light);
+    border:1px dashed var(--line);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--muted);
+    font-size:0.8rem;
+    text-align:center;
+    padding:12px;
+    overflow:hidden;
+  }
+  .product-photo img{width:100%;height:100%;object-fit:cover;border-radius:14px;}
+  .rec-card h3{margin:0 0 6px;font-size:1.5rem;}
+  .rec-tag{
+    display:inline-block;background:var(--accent);color:#06241a;
+    font-weight:700;font-size:0.8rem;padding:4px 12px;border-radius:20px;margin-bottom:12px;
+  }
+  .rec-card .price{color:var(--accent2);font-weight:700;font-size:1.2rem;margin:8px 0;}
+  .rec-card ul{margin:14px 0 0;padding-left:18px;color:var(--muted);}
+  .rec-card ul li{margin-bottom:6px;}
+
+  /* Comparison cards grid */
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:18px;
+  }
+  .card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+  }
+  .card.best{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset;}
+  .card .rank{
+    font-size:0.75rem;color:var(--muted);margin-bottom:8px;
+  }
+  .card h4{margin:0 0 4px;font-size:1.05rem;}
+  .card .price-tag{color:var(--accent2);font-weight:700;margin-bottom:10px;}
+  .card .photo-mini{
+    width:100%;height:140px;border-radius:10px;background:var(--panel-light);
+    border:1px dashed var(--line);
+    display:flex;align-items:center;justify-content:center;color:var(--muted);
+    font-size:0.75rem;margin-bottom:14px;overflow:hidden;
+  }
+  .card .photo-mini img{width:100%;height:100%;object-fit:cover;}
+  .specs{font-size:0.85rem;color:var(--muted);margin:0;padding:0;list-style:none;flex-grow:1;}
+  .specs li{padding:5px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:8px;}
+  .specs li span:first-child{color:var(--text);opacity:0.8;}
+  .specs li span:last-child{text-align:right;}
+  .pm{display:flex;gap:6px;margin-top:12px;flex-wrap:wrap;}
+  .pm span{font-size:0.78rem;padding:2px 10px;border-radius:12px;background:var(--panel-light);}
+  .pm .plus{color:var(--accent);}
+  .pm .minus{color:var(--bad);}
+
+  /* table */
+  table{width:100%;border-collapse:collapse;font-size:0.88rem;}
+  th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;}
+  th{color:var(--muted);font-weight:600;background:var(--panel);position:sticky;top:0;}
+  tr:hover td{background:var(--panel-light);}
+  .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;}
+
+  footer{padding:40px 0;text-align:center;color:var(--muted);font-size:0.85rem;}
+  .scenario-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;}
+  .scenario{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;}
+  .scenario b{color:var(--accent);}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="badge">Подборка · Compression Packing Cubes</span>
+    <h1>Какие компрессионные кубы выбрать</h1>
+    <p>Сравнение 5 вариантов с Amazon по тканям, молниям, сжатию и цене — и расчёт под конкретный комплект одежды.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Сколько места нужно</h2>
+    <p class="lead">Расчёт под комплект: 5 футболок, 2 рубашки, 2 пары штанов, 10 пар носков, 10 комплектов нижнего белья.</p>
+    <div class="calc-box">
+      <ul>
+        <li><span>Футболки (5 шт.)</span><span>5–8 л</span></li>
+        <li><span>Рубашки (2 шт.)</span><span>2–3 л</span></li>
+        <li><span>Штаны (2 пары)</span><span>3–5 л</span></li>
+        <li><span>Носки + бельё (10+10)</span><span>2–3 л</span></li>
+      </ul>
+      <div class="calc-total">
+        <div class="num">12–18 л</div>
+        <div class="label">общий объём одежды (зависит от тканей)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Рекомендованный вариант</h2>
+    <p class="lead">Лучшее соотношение цены, объёма и удобства сортировки именно под этот комплект.</p>
+    <div class="rec-card">
+      <div class="product-photo">
+        <img src="images/tripped.jpg" alt="Tripped Travel Gear" onerror="this.parentElement.innerHTML='Фото товара<br>(добавь в /images/tripped.jpg)'">
+      </div>
+      <div>
+        <span class="rec-tag">★ Лучший вариант под этот комплект</span>
+        <h3>Tripped Travel Gear — Compression Packing Cubes (6 шт.)</h3>
+        <div class="price">~$35–45 за полный комплект (~$6–8 за куб)</div>
+        <p style="color:var(--muted);margin:0 0 8px;">2 Large (35.6×25.4×10.2 см) + 2 Small (25.4×17.8×10.2 см) + тубус для обуви + мешок для белья.</p>
+        <ul>
+          <li>2 Large куба = под футболки и рубашки (5–8 л + 2–3 л — помещается с запасом)</li>
+          <li>2 Small куба = под штаны, носки и бельё (3–5 л + 2–3 л)</li>
+          <li>Сжатие до 2.5 см толщины — экономит до 60% места в чемодане</li>
+          <li>210D Ripstop Nylon с PU-покрытием — плотнее и более водостойкий, чем у Aerotrunk</li>
+          <li>Самая низкая цена среди всех вариантов — полный комплект, а не докупать отдельно</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Все варианты</h2>
+    <p class="lead">5 товаров с Amazon, отсортированы по итоговому рейтингу из анализа.</p>
+    <div class="grid">
+
+      <div class="card best">
+        <div class="rank">🥇 №1 по рейтингу — премиум</div>
+        <div class="photo-mini"><img src="images/eaglecreek.jpg" alt="Eagle Creek" onerror="this.parentElement.textContent='Фото: images/eaglecreek.jpg'"></div>
+        <h4>Eagle Creek Pack-It Isolate</h4>
+        <div class="price-tag">~$50–65 · 2 куба · ~$28/куб</div>
+        <ul class="specs">
+          <li><span>Объём</span><span>S 7 л / M 13 л</span></li>
+          <li><span>Ткань</span><span>Ocean Ripstop, GRS</span></li>
+          <li><span>Молнии</span><span>YKK самовосст.</span></li>
+          <li><span>Гарантия</span><span>Пожизненная</span></li>
+          <li><span>Вес комплекта</span><span>~60–100 г</span></li>
+        </ul>
+        <div class="pm">
+          <span class="plus">+ Protx2 защита от запаха</span>
+          <span class="plus">+ Самый лёгкий</span>
+          <span class="minus">− Только 2 куба</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="rank">🥈 №2 — премиум-альтернатива</div>
+        <div class="photo-mini"><img src="images/thule.jpg" alt="Thule" onerror="this.parentElement.textContent='Фото: images/thule.jpg'"></div>
+        <h4>Thule Compression Cube Set</h4>
+        <div class="price-tag">~$45–55 · 2 куба · ~$25/куб</div>
+        <ul class="specs">
+          <li><span>Объём</span><span>S 27×20×8 / M 37×27×10 см</span></li>
+          <li><span>Ткань</span><span>100D Ripstop, bluesign®</span></li>
+          <li><span>Молнии</span><span>YKK</span></li>
+          <li><span>Гарантия</span><span>Ограниченная Thule</span></li>
+          <li><span>Вес комплекта</span><span>~210 г</span></li>
+        </ul>
+        <div class="pm">
+          <span class="plus">+ Лучшее сжатие (3 см)</span>
+          <span class="plus">+ Держит форму</span>
+          <span class="minus">− Только 2 куба</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="rank">🥉 №3 — рекомендован под комплект</div>
+        <div class="photo-mini"><img src="images/tripped2.jpg" alt="Tripped" onerror="this.parentElement.textContent='Фото: images/tripped2.jpg'"></div>
+        <h4>Tripped Travel Gear</h4>
+        <div class="price-tag">~$35–45 · 6 шт. · ~$6–8/куб</div>
+        <ul class="specs">
+          <li><span>Объём</span><span>L 35.6×25.4×10.2 / S 25.4×17.8×10.2 см</span></li>
+          <li><span>Ткань</span><span>210D Ripstop + PU</span></li>
+          <li><span>Молнии</span><span>Усиленные (не YKK)</span></li>
+          <li><span>Гарантия</span><span>Нет данных</span></li>
+          <li><span>Вес комплекта</span><span>~120–340 г</span></li>
+        </ul>
+        <div class="pm">
+          <span class="plus">+ Полный набор + тубус + мешок</span>
+          <span class="plus">+ Самая низкая цена</span>
+          <span class="minus">− Непрозрачная ткань</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="rank">№4</div>
+        <div class="photo-mini"><img src="images/aerotrunk-ultra.jpg" alt="Aerotrunk Ultralight" onerror="this.parentElement.textContent='Фото: images/aerotrunk-ultra.jpg'"></div>
+        <h4>Aerotrunk Ultralight</h4>
+        <div class="price-tag">~$55–65 · 6 шт. · ~$9–11/куб</div>
+        <ul class="specs">
+          <li><span>Ткань</span><span>Ripstop Nylon</span></li>
+          <li><span>Молнии</span><span>YKK</span></li>
+          <li><span>Открытие</span><span>Clamshell</span></li>
+          <li><span>Гарантия</span><span>1 год</span></li>
+          <li><span>Вес комплекта</span><span>~700–900 г</span></li>
+        </ul>
+        <div class="pm">
+          <span class="plus">+ Удобная clamshell-укладка</span>
+          <span class="minus">− Дороже, чем Tripped</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="rank">№5</div>
+        <div class="photo-mini"><img src="images/aerotrunk6.jpg" alt="Aerotrunk 6-Pack" onerror="this.parentElement.textContent='Фото: images/aerotrunk6.jpg'"></div>
+        <h4>Aerotrunk 6-Pack</h4>
+        <div class="price-tag">~$50–60 · 6 шт. · ~$8–10/куб</div>
+        <ul class="specs">
+          <li><span>Ткань</span><span>Nylon Twill</span></li>
+          <li><span>Молнии</span><span>Без YKK</span></li>
+          <li><span>Гарантия</span><span>1 год</span></li>
+          <li><span>Вес комплекта</span><span>~907 г</span></li>
+        </ul>
+        <div class="pm">
+          <span class="plus">+ Доступный вход в формат</span>
+          <span class="minus">− Самый тяжёлый и слабый материал</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Полное сравнение</h2>
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th>Параметр</th>
+          <th>Aerotrunk 6-Pack</th>
+          <th>Eagle Creek Isolate</th>
+          <th>Aerotrunk Ultralight</th>
+          <th>Thule Set</th>
+          <th>Tripped Travel Gear</th>
+        </tr>
+        <tr><td>Цена</td><td>$50–60</td><td>$50–65</td><td>$55–65</td><td>$45–55</td><td>$35–45</td></tr>
+        <tr><td>Кубов в наборе</td><td>6</td><td>2</td><td>6</td><td>2</td><td>6 (2L+2S+тубус+мешок)</td></tr>
+        <tr><td>Цена за куб</td><td>~$8–10</td><td>~$25–32</td><td>~$9–11</td><td>~$22–27</td><td>~$6–8</td></tr>
+        <tr><td>Ткань</td><td>Nylon Twill</td><td>Ocean Ripstop (GRS)</td><td>Ripstop Nylon</td><td>100D Ripstop bluesign®</td><td>210D Ripstop + PU</td></tr>
+        <tr><td>Молнии</td><td>Без YKK</td><td>YKK самовосст.</td><td>YKK</td><td>YKK</td><td>Усиленные, не YKK</td></tr>
+        <tr><td>Антимикробная защита</td><td>Нет</td><td>Protx2®</td><td>Нет</td><td>Нет</td><td>Нет</td></tr>
+        <tr><td>Сжатие</td><td>Частичное</td><td>Хорошее</td><td>Частичное</td><td>До 3 см</td><td>До 2.5 см</td></tr>
+        <tr><td>Видно содержимое</td><td>Сетка</td><td>Прозрачная ткань</td><td>Сетка</td><td>Полупрозрачная</td><td>Нет</td></tr>
+        <tr><td>Гарантия</td><td>1 год</td><td>Пожизненная</td><td>1 год</td><td>Ограниченная</td><td>Нет данных</td></tr>
+        <tr><td>Вес комплекта</td><td>~907 г</td><td>~60–100 г</td><td>~700–900 г</td><td>~210 г</td><td>~120–340 г</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Что выбрать в зависимости от сценария</h2>
+    <div class="scenario-grid">
+      <div class="scenario"><b>Частые поездки, нужна долговечность</b><br>Eagle Creek Isolate</div>
+      <div class="scenario"><b>Редкие поездки, качество без переплаты</b><br>Thule Compression Set</div>
+      <div class="scenario"><b>Полный комплект, цена + качество</b><br>Tripped Travel Gear</div>
+      <div class="scenario"><b>Нужно 6 кубов, удобная укладка</b><br>Aerotrunk Ultralight</div>
+      <div class="scenario"><b>Просто попробовать формат</b><br>Aerotrunk 6-Pack</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Подборка составлена на основе данных Amazon.com · сравнение для презентации, не публичный коммерческий лендинг</div>
+</footer>
+
+</body>
+</html>
