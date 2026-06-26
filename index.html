@@ -326,6 +326,96 @@
     font-style: italic;
   }
 
+  /* ── COMBO SECTION ── */
+  .combo-section {
+    background: var(--white);
+    padding: 64px 24px;
+    border-top: 3px solid var(--green);
+  }
+  .combo-inner { max-width: 960px; margin: 0 auto; }
+  .combo-section .section-label { margin-bottom: 12px; }
+  .combo-section h2 {
+    font-size: clamp(22px, 3.5vw, 36px);
+    font-weight: 800;
+    margin-bottom: 12px;
+  }
+  .combo-subtitle {
+    font-size: 15px;
+    color: #555;
+    max-width: 680px;
+    margin-bottom: 40px;
+    line-height: 1.7;
+  }
+  .combo-cards {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 36px;
+  }
+  .combo-card {
+    flex: 1;
+    background: var(--light);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .combo-card img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+  }
+  .combo-card-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 16px;
+  }
+  .combo-color-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 2px solid rgba(0,0,0,.15);
+  }
+  .combo-color-name { font-size: 14px; font-weight: 600; }
+  .combo-plus {
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--green);
+    flex-shrink: 0;
+  }
+  .combo-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .combo-what {
+    background: var(--light);
+    border-radius: var(--radius);
+    padding: 24px;
+  }
+  .combo-what h3 { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+  .combo-what p { font-size: 14px; color: #555; line-height: 1.7; }
+  .combo-note {
+    background: #fff8f0;
+    border: 1.5px solid #f5d9c4;
+    border-radius: 8px;
+    padding: 16px 20px;
+    font-size: 14px;
+    color: #7a4a2a;
+    line-height: 1.6;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .combo-note-icon { font-size: 20px; flex-shrink: 0; }
+  .combo-btns {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .combo-btns .btn-amazon { flex: 1; min-width: 160px; text-align: center; }
+
   /* ── COMPARE TABLE ── */
   .compare-wrap { margin: 40px 0; }
   .compare-title { font-size: 20px; font-weight: 800; margin-bottom: 20px; }
@@ -578,7 +668,49 @@
   </div>
 </section>
 
-<!-- ЗАМЕТКА О ЦВЕТАХ -->
+<!-- КОМБО — ДЕКОМПОЗИЦИЯ ПО ЦВЕТАМ -->
+<section class="combo-section">
+  <div class="combo-inner">
+    <div class="section-label" style="color: var(--green);">Бонус от Eagle Creek</div>
+    <h2>Комбо: декомпозиция по цветам</h2>
+    <p class="combo-subtitle">Если хочется разделить вещи не только по размеру, но и визуально — берёте два набора разных цветов. Например: <strong>чёрный</strong> — для верхней одежды, <strong>серый</strong> — для нижнего белья и носков. Сразу видно что где.</p>
+
+    <div class="combo-cards">
+      <div class="combo-card">
+        <img src="71mHcwWS9XL._AC_SX679_.jpg" alt="Eagle Creek Isolate — Black">
+        <div class="combo-card-info">
+          <div class="combo-color-dot" style="background:#222;"></div>
+          <span class="combo-color-name">Black — верхняя одежда</span>
+        </div>
+      </div>
+      <div class="combo-plus">+</div>
+      <div class="combo-card">
+        <img src="71qxUGpVk8L._AC_SX679_.jpg" alt="Eagle Creek Isolate — Storm Grey">
+        <div class="combo-card-info">
+          <div class="combo-color-dot" style="background:#888;"></div>
+          <span class="combo-color-name">Storm Grey — бельё и носки</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="combo-details">
+      <div class="combo-what">
+        <h3>Что это за набор</h3>
+        <p><strong>Eagle Creek Pack-It Isolate Compression</strong> — это более лёгкая версия линейки Eagle Creek. Полупрозрачная ткань (видно содержимое без открытия), компрессионная молния, 100% переработанный нейлон, пожизненная гарантия. Набор S+M — по одному кубу каждого размера.</p>
+      </div>
+      <div class="combo-note">
+        <div class="combo-note-icon">⚠️</div>
+        <div>
+          <strong>Важно:</strong> каждый цвет заказывается отдельно. Итоговая стоимость комбо выше, чем один набор — но вы получаете идеальную систему организации по цветам.
+        </div>
+      </div>
+      <div class="combo-btns">
+        <a href="https://www.amazon.com/Eagle-Creek-Isolate-Compression-Mandarin/dp/B0D5RH8WRN/" target="_blank" class="btn-amazon" style="background:#222;">Купить Black →</a>
+        <a href="https://www.amazon.com/Eagle-Creek-Isolate-Compression-Mandarin/dp/B0D5RFVKMN/" target="_blank" class="btn-amazon" style="background:#777;">Купить Storm Grey →</a>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="colors-note">
   <div class="colors-note-box">
     <h3>🎨 Хотите разные цвета по категориям?</h3>
