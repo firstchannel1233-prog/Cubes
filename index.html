@@ -3,370 +3,645 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Компрессионные кубы — подборка и рекомендация</title>
+<title>Компрессионные кубы для путешествий — лучший выбор</title>
 <style>
-  :root{
-    --bg:#0f1115;
-    --panel:#171a21;
-    --panel-light:#1f232c;
-    --line:#2a2f3a;
-    --text:#e9ecf1;
-    --muted:#9aa3b2;
-    --accent:#5ee0a0;
-    --accent2:#ffb454;
-    --bad:#ff6b6b;
+  :root {
+    --black: #111111;
+    --white: #ffffff;
+    --orange: #E85C2B;
+    --green: #3D6B52;
+    --light: #F5F3EF;
+    --mid: #888;
+    --border: #e0ddd8;
+    --radius: 12px;
   }
-  *{box-sizing:border-box;}
-  body{
-    margin:0;
-    font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    line-height:1.5;
-  }
-  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
-  header.hero{
-    padding:64px 0 40px;
-    text-align:center;
-    border-bottom:1px solid var(--line);
-  }
-  header.hero h1{
-    font-size:2.4rem;
-    margin:0 0 12px;
-    letter-spacing:-0.02em;
-  }
-  header.hero p{
-    color:var(--muted);
-    font-size:1.05rem;
-    max-width:640px;
-    margin:0 auto;
-  }
-  .badge{
-    display:inline-block;
-    background:var(--panel-light);
-    border:1px solid var(--line);
-    color:var(--accent);
-    font-size:0.8rem;
-    padding:4px 12px;
-    border-radius:20px;
-    margin-bottom:18px;
-  }
-  section{padding:48px 0;border-bottom:1px solid var(--line);}
-  section h2{font-size:1.6rem;margin-bottom:6px;}
-  section .lead{color:var(--muted);margin-bottom:28px;max-width:700px;}
 
-  /* Volume calc box */
-  .calc-box{
-    background:var(--panel);
-    border:1px solid var(--line);
-    border-radius:16px;
-    padding:28px;
-    display:grid;
-    grid-template-columns:1.1fr 1fr;
-    gap:28px;
-  }
-  @media (max-width:760px){.calc-box{grid-template-columns:1fr;}}
-  .calc-box ul{margin:0;padding:0;list-style:none;}
-  .calc-box li{
-    display:flex;justify-content:space-between;
-    padding:10px 0;border-bottom:1px dashed var(--line);
-    font-size:0.95rem;
-  }
-  .calc-box li:last-child{border-bottom:none;}
-  .calc-total{
-    background:var(--panel-light);
-    border-radius:12px;
-    padding:24px;
-    display:flex;flex-direction:column;justify-content:center;align-items:center;
-    text-align:center;
-  }
-  .calc-total .num{font-size:2.6rem;font-weight:700;color:var(--accent);}
-  .calc-total .label{color:var(--muted);font-size:0.9rem;margin-top:4px;}
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
-  /* Recommendation */
-  .rec-card{
-    background:linear-gradient(145deg,#16241c,var(--panel));
-    border:1px solid #2c4a3a;
-    border-radius:18px;
-    padding:32px;
-    display:grid;
-    grid-template-columns:220px 1fr;
-    gap:28px;
-    align-items:center;
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: var(--light);
+    color: var(--black);
+    line-height: 1.6;
   }
-  @media (max-width:700px){.rec-card{grid-template-columns:1fr;}}
-  .product-photo{
-    width:100%;
-    aspect-ratio:1/1;
-    border-radius:14px;
-    background:var(--panel-light);
-    border:1px dashed var(--line);
-    display:flex;align-items:center;justify-content:center;
-    color:var(--muted);
-    font-size:0.8rem;
-    text-align:center;
-    padding:12px;
-    overflow:hidden;
-  }
-  .product-photo img{width:100%;height:100%;object-fit:cover;border-radius:14px;}
-  .rec-card h3{margin:0 0 6px;font-size:1.5rem;}
-  .rec-tag{
-    display:inline-block;background:var(--accent);color:#06241a;
-    font-weight:700;font-size:0.8rem;padding:4px 12px;border-radius:20px;margin-bottom:12px;
-  }
-  .rec-card .price{color:var(--accent2);font-weight:700;font-size:1.2rem;margin:8px 0;}
-  .rec-card ul{margin:14px 0 0;padding-left:18px;color:var(--muted);}
-  .rec-card ul li{margin-bottom:6px;}
 
-  /* Comparison cards grid */
-  .grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-    gap:18px;
+  /* ── HERO ── */
+  .hero {
+    background: var(--black);
+    color: var(--white);
+    text-align: center;
+    padding: 64px 24px 48px;
   }
-  .card{
-    background:var(--panel);
-    border:1px solid var(--line);
-    border-radius:14px;
-    padding:20px;
-    display:flex;
-    flex-direction:column;
+  .hero-eyebrow {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 16px;
   }
-  .card.best{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset;}
-  .card .rank{
-    font-size:0.75rem;color:var(--muted);margin-bottom:8px;
+  .hero h1 {
+    font-size: clamp(28px, 5vw, 52px);
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 720px;
+    margin: 0 auto 20px;
   }
-  .card h4{margin:0 0 4px;font-size:1.05rem;}
-  .card .price-tag{color:var(--accent2);font-weight:700;margin-bottom:10px;}
-  .card .photo-mini{
-    width:100%;height:140px;border-radius:10px;background:var(--panel-light);
-    border:1px dashed var(--line);
-    display:flex;align-items:center;justify-content:center;color:var(--muted);
-    font-size:0.75rem;margin-bottom:14px;overflow:hidden;
+  .hero h1 span { color: var(--orange); }
+  .hero p {
+    font-size: 18px;
+    color: #aaa;
+    max-width: 560px;
+    margin: 0 auto 32px;
   }
-  .card .photo-mini img{width:100%;height:100%;object-fit:cover;}
-  .specs{font-size:0.85rem;color:var(--muted);margin:0;padding:0;list-style:none;flex-grow:1;}
-  .specs li{padding:5px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:8px;}
-  .specs li span:first-child{color:var(--text);opacity:0.8;}
-  .specs li span:last-child{text-align:right;}
-  .pm{display:flex;gap:6px;margin-top:12px;flex-wrap:wrap;}
-  .pm span{font-size:0.78rem;padding:2px 10px;border-radius:12px;background:var(--panel-light);}
-  .pm .plus{color:var(--accent);}
-  .pm .minus{color:var(--bad);}
+  .hero-cta {
+    display: inline-block;
+    background: var(--orange);
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background .2s;
+  }
+  .hero-cta:hover { background: #c94d22; }
 
-  /* table */
-  table{width:100%;border-collapse:collapse;font-size:0.88rem;}
-  th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;}
-  th{color:var(--muted);font-weight:600;background:var(--panel);position:sticky;top:0;}
-  tr:hover td{background:var(--panel-light);}
-  .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;}
+  /* ── WHY SECTION ── */
+  .why {
+    max-width: 960px;
+    margin: 64px auto;
+    padding: 0 24px;
+  }
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 12px;
+  }
+  .why h2 {
+    font-size: clamp(22px, 3.5vw, 36px);
+    font-weight: 800;
+    margin-bottom: 40px;
+    line-height: 1.2;
+  }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+  }
+  .why-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    border-top: 3px solid var(--orange);
+  }
+  .why-card .icon { font-size: 28px; margin-bottom: 12px; }
+  .why-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+  .why-card p { font-size: 14px; color: #555; }
 
-  footer{padding:40px 0;text-align:center;color:var(--muted);font-size:0.85rem;}
-  .scenario-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;}
-  .scenario{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;}
-  .scenario b{color:var(--accent);}
+  /* ── HOW IT WORKS ── */
+  .how {
+    background: var(--black);
+    color: var(--white);
+    padding: 64px 24px;
+  }
+  .how-inner { max-width: 960px; margin: 0 auto; }
+  .how h2 {
+    font-size: clamp(22px, 3.5vw, 36px);
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  .how .subtitle {
+    color: #aaa;
+    font-size: 15px;
+    margin-bottom: 40px;
+  }
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  .step {
+    background: #1a1a1a;
+    border-radius: var(--radius);
+    padding: 24px;
+    position: relative;
+  }
+  .step-num {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--orange);
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  .step h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+  .step p { font-size: 14px; color: #aaa; }
+
+  /* compression explainer */
+  .compression-box {
+    margin-top: 40px;
+    background: #1a1a1a;
+    border-radius: var(--radius);
+    padding: 28px 28px;
+    border-left: 4px solid var(--orange);
+  }
+  .compression-box h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--white);
+  }
+  .compression-box p { color: #aaa; font-size: 15px; line-height: 1.7; margin-bottom: 10px; }
+  .compression-box p:last-child { margin-bottom: 0; }
+  .compression-box strong { color: var(--orange); }
+
+  /* ── PRODUCTS ── */
+  .products {
+    max-width: 960px;
+    margin: 64px auto;
+    padding: 0 24px;
+  }
+  .products h2 {
+    font-size: clamp(22px, 3.5vw, 36px);
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  .products .subtitle { color: #666; font-size: 15px; margin-bottom: 40px; }
+
+  .product-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-bottom: 32px;
+    box-shadow: 0 2px 16px rgba(0,0,0,.07);
+  }
+  .product-card.reverse { direction: rtl; }
+  .product-card.reverse > * { direction: ltr; }
+
+  .product-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    background: #f0ece5;
+    padding: 4px;
+  }
+  .product-images img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+  }
+  .product-images.single img {
+    aspect-ratio: 4/3;
+    grid-column: span 2;
+  }
+
+  .product-info {
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    width: fit-content;
+  }
+  .badge-best { background: var(--orange); color: #fff; }
+  .badge-premium { background: var(--green); color: #fff; }
+  .product-info h3 { font-size: 22px; font-weight: 800; margin-bottom: 6px; }
+  .product-info .brand { font-size: 13px; color: var(--mid); margin-bottom: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+  .product-info p { font-size: 14px; color: #555; margin-bottom: 20px; line-height: 1.7; }
+
+  .specs { margin-bottom: 20px; }
+  .spec-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+  }
+  .spec-row:last-child { border-bottom: none; }
+  .spec-row span:first-child { color: #888; }
+  .spec-row span:last-child { font-weight: 600; }
+
+  .btn-amazon {
+    display: inline-block;
+    background: var(--orange);
+    color: #fff;
+    padding: 13px 24px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    transition: background .2s;
+    text-align: center;
+  }
+  .btn-amazon:hover { background: #c94d22; }
+  .btn-amazon.green-btn { background: var(--green); }
+  .btn-amazon.green-btn:hover { background: #2f5240; }
+
+  /* price note */
+  .price-note {
+    background: #fff8f0;
+    border: 1.5px solid #f5d9c4;
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 13px;
+    color: #7a4a2a;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  /* ── COLORS NOTE ── */
+  .colors-note {
+    max-width: 960px;
+    margin: 0 auto 64px;
+    padding: 0 24px;
+  }
+  .colors-note-box {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 28px;
+    border-left: 4px solid #888;
+  }
+  .colors-note-box h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+  .colors-note-box p { font-size: 14px; color: #555; line-height: 1.7; }
+
+  /* ── ALTERNATIVES ── */
+  .alternatives {
+    background: #eae7e0;
+    padding: 48px 24px;
+  }
+  .alternatives-inner { max-width: 960px; margin: 0 auto; }
+  .alt-header {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+  }
+  .alt-header h2 { font-size: 20px; font-weight: 700; }
+  .alt-header .toggle-icon {
+    font-size: 22px;
+    color: #888;
+    transition: transform .3s;
+  }
+  .alt-header.open .toggle-icon { transform: rotate(180deg); }
+
+  .alt-note {
+    font-size: 14px;
+    color: #888;
+    margin-top: 6px;
+    margin-bottom: 24px;
+  }
+  .alt-grid {
+    display: none;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 24px;
+  }
+  .alt-grid.open { display: grid; }
+  .alt-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 22px;
+  }
+  .alt-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+  .alt-card p { font-size: 13px; color: #666; line-height: 1.6; }
+  .alt-card .alt-why {
+    font-size: 12px;
+    color: #999;
+    margin-top: 10px;
+    font-style: italic;
+  }
+
+  /* ── COMPARE TABLE ── */
+  .compare-wrap { margin: 40px 0; }
+  .compare-title { font-size: 20px; font-weight: 800; margin-bottom: 20px; }
+  .compare-table {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(0,0,0,.07);
+  }
+  .compare-header, .compare-row, .compare-footer {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    align-items: center;
+  }
+  .compare-header { background: var(--black); color: var(--white); padding: 20px 0; }
+  .compare-brand-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 6px;
+    width: fit-content;
+  }
+  .orange-bg { background: var(--orange); color: #fff; }
+  .green-bg { background: var(--green); color: #fff; }
+  .compare-brand-name { font-size: 14px; font-weight: 700; }
+  .compare-col { padding: 14px 16px; font-size: 14px; }
+  .compare-col-label { padding: 14px 16px; font-size: 13px; color: #888; font-weight: 600; }
+  .compare-row { border-bottom: 1px solid var(--border); }
+  .compare-row.alt { background: #faf9f7; }
+  .compare-footer { padding: 16px 0; border-top: 2px solid var(--border); }
+  .compare-col-orange { border-top: 3px solid var(--orange); }
+  .compare-col-green { border-top: 3px solid var(--green); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 680px) {
+    .product-card { grid-template-columns: 1fr; }
+    .product-card.reverse { direction: ltr; }
+    .product-images.single img { aspect-ratio: 16/9; }
+  }
 </style>
 </head>
 <body>
 
-<header class="hero">
-  <div class="wrap">
-    <span class="badge">Подборка · Compression Packing Cubes</span>
-    <h1>Какие компрессионные кубы выбрать</h1>
-    <p>Сравнение 5 вариантов с Amazon по тканям, молниям, сжатию и цене — и расчёт под конкретный комплект одежды.</p>
-  </div>
-</header>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Гид по компрессионным кубам</div>
+  <h1>Упакуй больше.<br><span>Плати за ручную кладь.</span></h1>
+  <p>Компрессионные кубы сжимают одежду на 30–50% — без вакуумного насоса, только молния.</p>
+  <a href="#products" class="hero-cta">Смотреть варианты ↓</a>
+</section>
 
-<section>
-  <div class="wrap">
-    <h2>Сколько места нужно</h2>
-    <p class="lead">Расчёт под комплект: 5 футболок, 2 рубашки, 2 пары штанов, 10 пар носков, 10 комплектов нижнего белья.</p>
-    <div class="calc-box">
-      <ul>
-        <li><span>Футболки (5 шт.)</span><span>5–8 л</span></li>
-        <li><span>Рубашки (2 шт.)</span><span>2–3 л</span></li>
-        <li><span>Штаны (2 пары)</span><span>3–5 л</span></li>
-        <li><span>Носки + бельё (10+10)</span><span>2–3 л</span></li>
-      </ul>
-      <div class="calc-total">
-        <div class="num">12–18 л</div>
-        <div class="label">общий объём одежды (зависит от тканей)</div>
-      </div>
+<!-- ЗАЧЕМ НУЖНЫ КУБЫ -->
+<section class="why">
+  <div class="section-label">Зачем это нужно</div>
+  <h2>Что даёт куб в чемодане</h2>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="icon">✈️</div>
+      <h3>Только ручная кладь</h3>
+      <p>Вещи на неделю умещаются в 40-литровый рюкзак. Экономия на багаже — от $30 за перелёт.</p>
+    </div>
+    <div class="why-card">
+      <div class="icon">🗂</div>
+      <h3>Порядок без усилий</h3>
+      <p>Каждый куб — отдельная категория вещей. Больше не нужно перебирать весь чемодан в поиске носков.</p>
+    </div>
+    <div class="why-card">
+      <div class="icon">🔄</div>
+      <h3>Быстрая распаковка</h3>
+      <p>Достал куб из чемодана — поставил в шкаф. Переезд между отелями занимает 2 минуты.</p>
+    </div>
+    <div class="why-card">
+      <div class="icon">💧</div>
+      <h3>Защита от влаги</h3>
+      <p>Водоотталкивающий нейлон защищает одежду если в чемодане что-то протекло.</p>
     </div>
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <h2>Рекомендованный вариант</h2>
-    <p class="lead">Лучшее соотношение цены, объёма и удобства сортировки именно под этот комплект.</p>
-    <div class="rec-card">
-      <div class="product-photo">
-        <img src="images/tripped.jpg" alt="Tripped Travel Gear" onerror="this.parentElement.innerHTML='Фото товара<br>(добавь в /images/tripped.jpg)'">
+<!-- КАК РАБОТАЕТ КОМПРЕССИЯ -->
+<section class="how">
+  <div class="how-inner">
+    <div class="section-label" style="color: #E85C2B;">Принцип работы</div>
+    <h2>Как работает молния-компрессия</h2>
+    <p class="subtitle">4 шага — и вещи занимают вдвое меньше места</p>
+
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">Шаг 1</div>
+        <h3>Наполни куб</h3>
+        <p>Складывай или скатывай вещи горкой — не нужно аккуратно: куб выровняет сам.</p>
       </div>
+      <div class="step">
+        <div class="step-num">Шаг 2</div>
+        <h3>Закрой основную молнию</h3>
+        <p>Первая молния по периметру фиксирует вещи внутри.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">Шаг 3</div>
+        <h3>Тяни молнию компрессии</h3>
+        <p>Вторая молния идёт поверх первой и выдавливает воздух из ткани. Куб «схлопывается» — с 10 см до 2–3 см толщиной.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">Шаг 4</div>
+        <h3>Вперёд!</h3>
+        <p>Компактный куб с ручкой легко укладывается в чемодан или рюкзак стопкой.</p>
+      </div>
+    </div>
+
+    <div class="compression-box">
+      <h3>🔑 В чём секрет компрессии на молнии</h3>
+      <p>
+        Обычный куб просто группирует вещи. <strong>Компрессионный куб работает иначе</strong>: у него две молнии — основная (по периметру) и компрессионная (по боковой стороне).
+      </p>
+      <p>
+        Когда ты тянешь компрессионную молнию, верхняя панель куба давит на содержимое и буквально <strong>выжимает воздух</strong> из складок одежды. Никакого насоса — только физика. Это не вредит вещам: после распаковки они выравниваются через несколько минут.
+      </p>
+      <p>
+        Итог: куб с 5–6 футболками сжимается <strong>до 2 см толщиной</strong> — вместо 8–10 см обычного.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="section-label">Наш выбор</div>
+  <h2>Два варианта, которые мы рекомендуем</h2>
+  <p class="subtitle">Проверили сами — подходят для большинства поездок.</p>
+
+  <!-- TRIPPED — ЛУЧШИЙ ВЫБОР -->
+  <div class="product-card">
+    <div class="product-images">
+      <img src="91yQTsOKFOL__AC_SL1500_.jpg" alt="TRIPPED Travel Gear — 4 шага компрессии">
+      <img src="71l1Sfi8IXL__AC_SL1500_.jpg" alt="TRIPPED Travel Gear — набор из 3 кубов">
+    </div>
+    <div class="product-info">
+      <span class="badge badge-best">⭐ Лучший выбор</span>
+      <h3>TRIPPED Travel Gear</h3>
+      <div class="brand">Компрессионный набор — 3 куба</div>
+      <p>
+        Оптимальное соотношение цены и качества. Лёгкий нейлон-рипстоп, усиленные молнии, набор 3 в 1 закрывает все нужды: большой куб для одежды, средний для нижнего белья, маленький для аксессуаров.
+      </p>
+      <div class="specs">
+        <div class="spec-row"><span>Материал</span><span>Рипстоп нейлон, водооталкивающий</span></div>
+        <div class="spec-row"><span>Набор</span><span>3 куба (L + M + S)</span></div>
+        <div class="spec-row"><span>Вес комплекта</span><span>~330 г</span></div>
+        <div class="spec-row"><span>Молнии</span><span>Двойные, усиленные</span></div>
+        <div class="spec-row"><span>Сжатие</span><span>до 30% экономии места</span></div>
+      </div>
+      <a href="https://www.amazon.com/Packing-Travel-Organizer-Compression-Carryon/dp/B078RQYLD6/" target="_blank" class="btn-amazon">Купить на Amazon →</a>
+    </div>
+  </div>
+
+  <!-- СРАВНИТЕЛЬНАЯ ТАБЛИЦА -->
+  <div class="compare-wrap">
+    <div class="section-label" style="margin-bottom:12px;">Сравнение</div>
+    <h3 class="compare-title">TRIPPED vs Eagle Creek — в чём разница</h3>
+    <div class="compare-table">
+      <div class="compare-header">
+        <div class="compare-col-label"></div>
+        <div class="compare-col compare-col-orange">
+          <div class="compare-brand-badge orange-bg">⭐ Лучший выбор</div>
+          <div class="compare-brand-name">TRIPPED Travel Gear</div>
+        </div>
+        <div class="compare-col compare-col-green">
+          <div class="compare-brand-badge green-bg">💎 Люксовый</div>
+          <div class="compare-brand-name">Eagle Creek Pack-It</div>
+        </div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-col-label">Цена</div>
+        <div class="compare-col">💲 Доступная</div>
+        <div class="compare-col">💲💲💲 Высокая</div>
+      </div>
+      <div class="compare-row alt">
+        <div class="compare-col-label">Набор</div>
+        <div class="compare-col">3 куба (L + M + S)</div>
+        <div class="compare-col">2 куба (S + M)</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-col-label">Компрессия</div>
+        <div class="compare-col">✅ Да, двойная молния</div>
+        <div class="compare-col">✅ Да, фирменная молния</div>
+      </div>
+      <div class="compare-row alt">
+        <div class="compare-col-label">Материал</div>
+        <div class="compare-col">Рипстоп нейлон</div>
+        <div class="compare-col">100% переработанный нейлон</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-col-label">Видно содержимое</div>
+        <div class="compare-col">❌ Нет</div>
+        <div class="compare-col">✅ Прозрачная сетка сверху</div>
+      </div>
+      <div class="compare-row alt">
+        <div class="compare-col-label">Гарантия</div>
+        <div class="compare-col">Возврат / замена</div>
+        <div class="compare-col">Пожизненная</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-col-label">Машинная стирка</div>
+        <div class="compare-col">✅ Да</div>
+        <div class="compare-col">✅ Да</div>
+      </div>
+      <div class="compare-row alt">
+        <div class="compare-col-label">Кому подходит</div>
+        <div class="compare-col">Большинству путешественников</div>
+        <div class="compare-col">Частые поездки, важен бренд</div>
+      </div>
+      <div class="compare-footer">
+        <div class="compare-col-label"></div>
+        <div class="compare-col">
+          <a href="https://www.amazon.com/Packing-Travel-Organizer-Compression-Carryon/dp/B078RQYLD6/" target="_blank" class="btn-amazon" style="font-size:13px;padding:10px 18px;">Купить →</a>
+        </div>
+        <div class="compare-col">
+          <a href="https://www.amazon.com/Eagle-Creek-Pack-Reveal-Compression/dp/B0FCW1JFY3/" target="_blank" class="btn-amazon green-btn" style="font-size:13px;padding:10px 18px;">Купить →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EAGLE CREEK — САМЫЙ КАЧЕСТВЕННЫЙ -->
+  <div class="product-card reverse">
+    <div class="product-images">
+      <img src="71HTvPHlgfL__AC_SL1280_.jpg" alt="Eagle Creek Pack-It — компрессионная молния">
+      <img src="712gFgppvqL__AC_SL1280_.jpg" alt="Eagle Creek Pack-It — набор S/M">
+    </div>
+    <div class="product-info">
+      <span class="badge badge-premium">💎 Люксовый вариант</span>
+      <h3>Eagle Creek Pack-It Reveal</h3>
+      <div class="brand">S/M Set — Willow Green</div>
+      <div class="price-note">
+        💰 <strong>Самое высокое качество на рынке</strong> — но и самая высокая цена. Подходит тем, кто путешествует очень часто и готов платить за бренд с 50-летней историей и пожизненной гарантией.
+      </div>
+      <p>
+        Eagle Creek производит снаряжение для путешественников с 1975 года. Pack-It Reveal — их флагманская линейка: переработанные материалы, прозрачная верхняя панель (сразу видно содержимое), фирменная компрессионная молния и ручка для переноски.
+      </p>
+      <div class="specs">
+        <div class="spec-row"><span>Материал</span><span>100% переработанный нейлон</span></div>
+        <div class="spec-row"><span>Набор</span><span>S + M (2 куба)</span></div>
+        <div class="spec-row"><span>Верхняя панель</span><span>Прозрачная сетка</span></div>
+        <div class="spec-row"><span>Гарантия</span><span>Пожизненная (No Matter What)</span></div>
+        <div class="spec-row"><span>Стираемый</span><span>Да, машинная стирка</span></div>
+      </div>
+      <a href="https://www.amazon.com/Eagle-Creek-Pack-Reveal-Compression/dp/B0FCW1JFY3/" target="_blank" class="btn-amazon green-btn">Купить на Amazon →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ЗАМЕТКА О ЦВЕТАХ -->
+<section class="colors-note">
+  <div class="colors-note-box">
+    <h3>🎨 Хотите разные цвета по категориям?</h3>
+    <p>
+      Если вы хотите, например, синий куб для футболок и серый — для белья, это возможно. Но: каждый цвет придётся заказывать <strong>отдельно</strong>, поскольку наборы продаются в одном цвете. Это выйдет дороже, чем покупка готового набора. Если цветовое разделение для вас принципиально — считайте бюджет заранее.
+    </p>
+  </div>
+</section>
+
+<!-- ДРУГИЕ ВАРИАНТЫ (скрытый блок) -->
+<section class="alternatives">
+  <div class="alternatives-inner">
+    <div class="alt-header" onclick="toggleAlternatives(this)">
       <div>
-        <span class="rec-tag">★ Лучший вариант под этот комплект</span>
-        <h3>Tripped Travel Gear — Compression Packing Cubes (6 шт.)</h3>
-        <div class="price">~$35–45 за полный комплект (~$6–8 за куб)</div>
-        <p style="color:var(--muted);margin:0 0 8px;">2 Large (35.6×25.4×10.2 см) + 2 Small (25.4×17.8×10.2 см) + тубус для обуви + мешок для белья.</p>
-        <ul>
-          <li>2 Large куба = под футболки и рубашки (5–8 л + 2–3 л — помещается с запасом)</li>
-          <li>2 Small куба = под штаны, носки и бельё (3–5 л + 2–3 л)</li>
-          <li>Сжатие до 2.5 см толщины — экономит до 60% места в чемодане</li>
-          <li>210D Ripstop Nylon с PU-покрытием — плотнее и более водостойкий, чем у Aerotrunk</li>
-          <li>Самая низкая цена среди всех вариантов — полный комплект, а не докупать отдельно</li>
-        </ul>
+        <h2>Другие варианты на рынке</h2>
+        <p class="alt-note">Неплохие продукты, но нам не подошли — на будущее</p>
+      </div>
+      <div class="toggle-icon">▾</div>
+    </div>
+    <div class="alt-grid" id="altGrid">
+      <div class="alt-card">
+        <h4>BAGAIL Compression Cubes</h4>
+        <p>Бюджетный набор из 6 кубов. Хорошее соотношение цена/объём, широко распространён на Amazon.</p>
+        <p class="alt-why">Почему не в топе: качество зипперов уступает, материал тоньше — служит меньше при интенсивном использовании.</p>
+      </div>
+      <div class="alt-card">
+        <h4>Gonex Compression Cubes</h4>
+        <p>Ещё один популярный китайский бренд с хорошими отзывами. Набор на 6 кубов разного размера.</p>
+        <p class="alt-why">Почему не в топе: нет усиленных молний, компрессия чуть слабее при полной набивке.</p>
+      </div>
+      <div class="alt-card">
+        <h4>Amazon Basics Packing Cubes</h4>
+        <p>Самый дешёвый вариант с минимальными рисками. Подойдёт для разового короткого трипа.</p>
+        <p class="alt-why">Почему не в топе: нет настоящей компрессии — просто органайзеры без второй молнии.</p>
+      </div>
+      <div class="alt-card">
+        <h4>Osprey Ultralight Packing Cubes</h4>
+        <p>Сверхлёгкие кубы от известного производителя рюкзаков. Хороший выбор для ультралёгких трипов.</p>
+        <p class="alt-why">Почему не в топе: нет компрессии на молнии — только базовая организация пространства.</p>
+      </div>
+      <div class="alt-card">
+        <h4>Peak Design Packing Cubes</h4>
+        <p>Дизайнерские кубы для фотографов и минималистов. Великолепное качество сборки.</p>
+        <p class="alt-why">Почему не в топе: очень высокая цена, нет компрессионной молнии, скорее органайзер.</p>
+      </div>
+      <div class="alt-card">
+        <h4>Cipway Compression Cubes</h4>
+        <p>Аналог TRIPPED по конструкции. Немного легче, набор из 3 штук по схожей цене.</p>
+        <p class="alt-why">Почему не в топе: менее известный бренд, меньше отзывов для надёжной оценки долговечности.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <h2>Все варианты</h2>
-    <p class="lead">5 товаров с Amazon, отсортированы по итоговому рейтингу из анализа.</p>
-    <div class="grid">
-
-      <div class="card best">
-        <div class="rank">🥇 №1 по рейтингу — премиум</div>
-        <div class="photo-mini"><img src="images/eaglecreek.jpg" alt="Eagle Creek" onerror="this.parentElement.textContent='Фото: images/eaglecreek.jpg'"></div>
-        <h4>Eagle Creek Pack-It Isolate</h4>
-        <div class="price-tag">~$50–65 · 2 куба · ~$28/куб</div>
-        <ul class="specs">
-          <li><span>Объём</span><span>S 7 л / M 13 л</span></li>
-          <li><span>Ткань</span><span>Ocean Ripstop, GRS</span></li>
-          <li><span>Молнии</span><span>YKK самовосст.</span></li>
-          <li><span>Гарантия</span><span>Пожизненная</span></li>
-          <li><span>Вес комплекта</span><span>~60–100 г</span></li>
-        </ul>
-        <div class="pm">
-          <span class="plus">+ Protx2 защита от запаха</span>
-          <span class="plus">+ Самый лёгкий</span>
-          <span class="minus">− Только 2 куба</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="rank">🥈 №2 — премиум-альтернатива</div>
-        <div class="photo-mini"><img src="images/thule.jpg" alt="Thule" onerror="this.parentElement.textContent='Фото: images/thule.jpg'"></div>
-        <h4>Thule Compression Cube Set</h4>
-        <div class="price-tag">~$45–55 · 2 куба · ~$25/куб</div>
-        <ul class="specs">
-          <li><span>Объём</span><span>S 27×20×8 / M 37×27×10 см</span></li>
-          <li><span>Ткань</span><span>100D Ripstop, bluesign®</span></li>
-          <li><span>Молнии</span><span>YKK</span></li>
-          <li><span>Гарантия</span><span>Ограниченная Thule</span></li>
-          <li><span>Вес комплекта</span><span>~210 г</span></li>
-        </ul>
-        <div class="pm">
-          <span class="plus">+ Лучшее сжатие (3 см)</span>
-          <span class="plus">+ Держит форму</span>
-          <span class="minus">− Только 2 куба</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="rank">🥉 №3 — рекомендован под комплект</div>
-        <div class="photo-mini"><img src="images/tripped2.jpg" alt="Tripped" onerror="this.parentElement.textContent='Фото: images/tripped2.jpg'"></div>
-        <h4>Tripped Travel Gear</h4>
-        <div class="price-tag">~$35–45 · 6 шт. · ~$6–8/куб</div>
-        <ul class="specs">
-          <li><span>Объём</span><span>L 35.6×25.4×10.2 / S 25.4×17.8×10.2 см</span></li>
-          <li><span>Ткань</span><span>210D Ripstop + PU</span></li>
-          <li><span>Молнии</span><span>Усиленные (не YKK)</span></li>
-          <li><span>Гарантия</span><span>Нет данных</span></li>
-          <li><span>Вес комплекта</span><span>~120–340 г</span></li>
-        </ul>
-        <div class="pm">
-          <span class="plus">+ Полный набор + тубус + мешок</span>
-          <span class="plus">+ Самая низкая цена</span>
-          <span class="minus">− Непрозрачная ткань</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="rank">№4</div>
-        <div class="photo-mini"><img src="images/aerotrunk-ultra.jpg" alt="Aerotrunk Ultralight" onerror="this.parentElement.textContent='Фото: images/aerotrunk-ultra.jpg'"></div>
-        <h4>Aerotrunk Ultralight</h4>
-        <div class="price-tag">~$55–65 · 6 шт. · ~$9–11/куб</div>
-        <ul class="specs">
-          <li><span>Ткань</span><span>Ripstop Nylon</span></li>
-          <li><span>Молнии</span><span>YKK</span></li>
-          <li><span>Открытие</span><span>Clamshell</span></li>
-          <li><span>Гарантия</span><span>1 год</span></li>
-          <li><span>Вес комплекта</span><span>~700–900 г</span></li>
-        </ul>
-        <div class="pm">
-          <span class="plus">+ Удобная clamshell-укладка</span>
-          <span class="minus">− Дороже, чем Tripped</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="rank">№5</div>
-        <div class="photo-mini"><img src="images/aerotrunk6.jpg" alt="Aerotrunk 6-Pack" onerror="this.parentElement.textContent='Фото: images/aerotrunk6.jpg'"></div>
-        <h4>Aerotrunk 6-Pack</h4>
-        <div class="price-tag">~$50–60 · 6 шт. · ~$8–10/куб</div>
-        <ul class="specs">
-          <li><span>Ткань</span><span>Nylon Twill</span></li>
-          <li><span>Молнии</span><span>Без YKK</span></li>
-          <li><span>Гарантия</span><span>1 год</span></li>
-          <li><span>Вес комплекта</span><span>~907 г</span></li>
-        </ul>
-        <div class="pm">
-          <span class="plus">+ Доступный вход в формат</span>
-          <span class="minus">− Самый тяжёлый и слабый материал</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2>Полное сравнение</h2>
-    <div class="table-wrap">
-      <table>
-        <tr>
-          <th>Параметр</th>
-          <th>Aerotrunk 6-Pack</th>
-          <th>Eagle Creek Isolate</th>
-          <th>Aerotrunk Ultralight</th>
-          <th>Thule Set</th>
-          <th>Tripped Travel Gear</th>
-        </tr>
-        <tr><td>Цена</td><td>$50–60</td><td>$50–65</td><td>$55–65</td><td>$45–55</td><td>$35–45</td></tr>
-        <tr><td>Кубов в наборе</td><td>6</td><td>2</td><td>6</td><td>2</td><td>6 (2L+2S+тубус+мешок)</td></tr>
-        <tr><td>Цена за куб</td><td>~$8–10</td><td>~$25–32</td><td>~$9–11</td><td>~$22–27</td><td>~$6–8</td></tr>
-        <tr><td>Ткань</td><td>Nylon Twill</td><td>Ocean Ripstop (GRS)</td><td>Ripstop Nylon</td><td>100D Ripstop bluesign®</td><td>210D Ripstop + PU</td></tr>
-        <tr><td>Молнии</td><td>Без YKK</td><td>YKK самовосст.</td><td>YKK</td><td>YKK</td><td>Усиленные, не YKK</td></tr>
-        <tr><td>Антимикробная защита</td><td>Нет</td><td>Protx2®</td><td>Нет</td><td>Нет</td><td>Нет</td></tr>
-        <tr><td>Сжатие</td><td>Частичное</td><td>Хорошее</td><td>Частичное</td><td>До 3 см</td><td>До 2.5 см</td></tr>
-        <tr><td>Видно содержимое</td><td>Сетка</td><td>Прозрачная ткань</td><td>Сетка</td><td>Полупрозрачная</td><td>Нет</td></tr>
-        <tr><td>Гарантия</td><td>1 год</td><td>Пожизненная</td><td>1 год</td><td>Ограниченная</td><td>Нет данных</td></tr>
-        <tr><td>Вес комплекта</td><td>~907 г</td><td>~60–100 г</td><td>~700–900 г</td><td>~210 г</td><td>~120–340 г</td></tr>
-      </table>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2>Что выбрать в зависимости от сценария</h2>
-    <div class="scenario-grid">
-      <div class="scenario"><b>Частые поездки, нужна долговечность</b><br>Eagle Creek Isolate</div>
-      <div class="scenario"><b>Редкие поездки, качество без переплаты</b><br>Thule Compression Set</div>
-      <div class="scenario"><b>Полный комплект, цена + качество</b><br>Tripped Travel Gear</div>
-      <div class="scenario"><b>Нужно 6 кубов, удобная укладка</b><br>Aerotrunk Ultralight</div>
-      <div class="scenario"><b>Просто попробовать формат</b><br>Aerotrunk 6-Pack</div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">Подборка составлена на основе данных Amazon.com · сравнение для презентации, не публичный коммерческий лендинг</div>
-</footer>
+<script>
+function toggleAlternatives(el) {
+  el.classList.toggle('open');
+  document.getElementById('altGrid').classList.toggle('open');
+}
+</script>
 
 </body>
 </html>
